@@ -33,6 +33,10 @@ class OmniDateTimePicker extends StatefulWidget {
   final TextStyle? timeSpinnerHighlightedTextStyle;
   final Radius? borderRadius;
 
+  // captions
+  final String? okButton;
+  final String? cancelButton;
+
   const OmniDateTimePicker({
     Key? key,
     this.startInitialDate,
@@ -49,6 +53,8 @@ class OmniDateTimePicker extends StatefulWidget {
     this.timeSpinnerTextStyle,
     this.timeSpinnerHighlightedTextStyle,
     this.borderRadius,
+    this.okButton,
+    this.cancelButton,
   }) : super(key: key);
 
   @override
@@ -168,7 +174,7 @@ class _OmniDateTimePickerState extends State<OmniDateTimePicker>
                         Navigator.of(context).pop<DateTime>();
                       },
                       child: Text(
-                        "Cancel",
+                        widget.cancelButton ?? "Cancel",
                         style: TextStyle(
                             color: widget.buttonTextColor ?? Colors.black),
                       ),
@@ -193,7 +199,7 @@ class _OmniDateTimePickerState extends State<OmniDateTimePicker>
                         );
                       },
                       child: Text(
-                        "Done",
+                        widget.okButton ?? "Done",
                         style: TextStyle(
                             color: widget.buttonTextColor ?? Colors.black),
                       ),

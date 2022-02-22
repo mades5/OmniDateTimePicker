@@ -34,6 +34,8 @@ Future<DateTime?> showOmniDateTimePicker({
   TextStyle? timeSpinnerTextStyle,
   TextStyle? timeSpinnerHighlightedTextStyle,
   Radius? borderRadius,
+  String? okButton,
+  String? cancelButton,
 }) {
   return showDialog(
     context: context,
@@ -53,6 +55,8 @@ Future<DateTime?> showOmniDateTimePicker({
         timeSpinnerTextStyle: timeSpinnerTextStyle,
         timeSpinnerHighlightedTextStyle: timeSpinnerHighlightedTextStyle,
         borderRadius: borderRadius,
+        okButton: okButton,
+        cancelButton: cancelButton,
       );
     },
   );
@@ -81,6 +85,10 @@ Future<List<DateTime>?> showOmniDateTimeRangePicker({
   TextStyle? timeSpinnerTextStyle,
   TextStyle? timeSpinnerHighlightedTextStyle,
   Radius? borderRadius,
+  String? startCaption,
+  String? endCaption,
+  String? okButton,
+  String? cancelButton,
 }) {
   return showDialog(
     context: context,
@@ -103,6 +111,10 @@ Future<List<DateTime>?> showOmniDateTimeRangePicker({
         timeSpinnerTextStyle: timeSpinnerTextStyle,
         timeSpinnerHighlightedTextStyle: timeSpinnerHighlightedTextStyle,
         borderRadius: borderRadius,
+        startCaption: startCaption,
+        endCaption: endCaption,
+        okButton: okButton,
+        cancelButton: cancelButton,
       );
     },
   );

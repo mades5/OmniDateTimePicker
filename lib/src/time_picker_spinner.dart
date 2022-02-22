@@ -302,6 +302,10 @@ class _TimePickerSpinnerState extends State<TimePickerSpinner> {
     );
   }
 
+  String formatWithLeading(String value, {int length = 2}) {
+    return value.padLeft(length, '0');
+  }
+
   Widget spinner(
       ScrollController controller,
       int max,
@@ -367,7 +371,7 @@ class _TimePickerSpinnerState extends State<TimePickerSpinner> {
             height: _getItemHeight(),
             alignment: _getAlignment(),
             child: Text(
-              text,
+              formatWithLeading(text),
               style: selectedIndex == index
                   ? _getHighlightedTextStyle()
                   : _getNormalTextStyle(),

@@ -48,6 +48,12 @@ class OmniDateTimeRangePicker extends StatefulWidget {
   final TextStyle? timeSpinnerHighlightedTextStyle;
   final Radius? borderRadius;
 
+  // captions
+  final String? okButton;
+  final String? cancelButton;
+  final String? startCaption;
+  final String? endCaption;
+
   const OmniDateTimeRangePicker({
     Key? key,
     this.startInitialDate,
@@ -67,6 +73,10 @@ class OmniDateTimeRangePicker extends StatefulWidget {
     this.timeSpinnerTextStyle,
     this.timeSpinnerHighlightedTextStyle,
     this.borderRadius,
+    this.okButton,
+    this.cancelButton,
+    this.startCaption,
+    this.endCaption,
   }) : super(key: key);
 
   @override
@@ -145,7 +155,7 @@ class _OmniDateTimeRangePickerState extends State<OmniDateTimeRangePicker>
                             widget.borderRadius ?? const Radius.circular(16),
                       )),
                   child: Text(
-                    "Start",
+                    widget.startCaption ?? "Start",
                     style:
                         TextStyle(color: widget.tabTextColor ?? Colors.black87),
                   ),
@@ -165,7 +175,7 @@ class _OmniDateTimeRangePickerState extends State<OmniDateTimeRangePicker>
                             widget.borderRadius ?? const Radius.circular(16),
                       )),
                   child: Text(
-                    "End",
+                    widget.endCaption ?? "End",
                     style:
                         TextStyle(color: widget.tabTextColor ?? Colors.black87),
                   ),
@@ -317,7 +327,7 @@ class _OmniDateTimeRangePickerState extends State<OmniDateTimeRangePicker>
                           Navigator.of(context).pop<List<DateTime>>();
                         },
                         child: Text(
-                          "Cancel",
+                          widget.cancelButton ?? "Cancel",
                           style: TextStyle(
                               color: widget.buttonTextColor ?? Colors.black),
                         ),
@@ -342,7 +352,7 @@ class _OmniDateTimeRangePickerState extends State<OmniDateTimeRangePicker>
                           ]);
                         },
                         child: Text(
-                          "Done",
+                          widget.okButton ?? "Done",
                           style: TextStyle(
                               color: widget.buttonTextColor ?? Colors.black),
                         ),
